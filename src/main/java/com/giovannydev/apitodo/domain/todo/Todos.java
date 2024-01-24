@@ -11,17 +11,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name="Todo")
-@Entity(name="Todo")
+@Table(name="todos")
+@Entity(name="todos")
 @EqualsAndHashCode(of="id")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Todo {
+public class Todos {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   private String name;
