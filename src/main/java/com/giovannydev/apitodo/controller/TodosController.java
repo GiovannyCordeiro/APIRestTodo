@@ -33,7 +33,7 @@ public class TodosController {
   }
 
   @PostMapping
-  public ResponseEntity createTodo(@RequestBody @Validated RequestCreateTodoDTO data){
+  public ResponseEntity<Todos> createTodo(@RequestBody @Validated RequestCreateTodoDTO data){
     return createTodo.createTodo(data);
   }
 }

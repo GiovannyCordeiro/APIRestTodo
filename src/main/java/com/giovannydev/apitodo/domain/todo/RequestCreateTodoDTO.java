@@ -10,5 +10,4 @@ public record RequestCreateTodoDTO (
   String category,
   @NotNull
   Boolean status
-){
-}
+){}

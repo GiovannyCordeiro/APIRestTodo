@@ -14,7 +14,7 @@ public class CreateTodoService {
   @Autowired
   private TodosRepository repository;
 
-  public ResponseEntity createTodo(RequestCreateTodoDTO data) {
+  public ResponseEntity<Todos> createTodo(RequestCreateTodoDTO data) {
     Todos newTodo = new Todos(data);
     Todos todo = repository.save(newTodo);
     return ResponseEntity.ok(todo);
