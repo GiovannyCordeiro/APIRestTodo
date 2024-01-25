@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.giovannydev.apitodo.domain.todo.Todos;
-import com.giovannydev.apitodo.services.todo.TodosService;
+import com.giovannydev.apitodo.services.todo.GetTodosService;
 
 @RestController
 @RequestMapping("/api-todos/todos")
 public class TodosController {
 
-  private final TodosService todoService;
+  private final GetTodosService todoService;
 
-  public TodosController(TodosService todoService){
+  public TodosController(GetTodosService todoService){
     this.todoService = todoService;
   }
-  
+
   @GetMapping
   public ResponseEntity<List<Todos>> listTodos() {
-    return ResponseEntity.ok(todoService.getAllTodos());
+    return todoService.responseTodoListUser();
   }
 }
