@@ -31,4 +31,11 @@ public class Todos {
   private String category;
 
   private Boolean status;
+
+  public Todos(RequestCreateTodoDTO requestTodo){
+    this.name = requestTodo.name();
+    this.description = requestTodo.description();
+    this.category = requestTodo.category();
+    this.status = requestTodo.status();
+  }
 }
