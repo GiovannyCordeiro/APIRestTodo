@@ -1,5 +1,7 @@
 package com.giovannydev.apitodo.domain.todo;
 
+import com.giovannydev.apitodo.domain.todo.DTOs.RequestCreateTodoDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

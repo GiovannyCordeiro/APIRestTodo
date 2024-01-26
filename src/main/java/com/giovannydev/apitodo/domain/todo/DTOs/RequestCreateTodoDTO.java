@@ -1,4 +1,4 @@
-package com.giovannydev.apitodo.domain.todo;
+package com.giovannydev.apitodo.domain.todo.DTOs;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

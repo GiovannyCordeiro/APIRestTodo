@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.giovannydev.apitodo.domain.todo.RequestCreateTodoDTO;
 import com.giovannydev.apitodo.domain.todo.Todos;
+import com.giovannydev.apitodo.domain.todo.DTOs.RequestCreateTodoDTO;
 import com.giovannydev.apitodo.domain.todo.DTOs.RequestUpdateDTO;
 import com.giovannydev.apitodo.services.todo.CreateTodoService;
 import com.giovannydev.apitodo.services.todo.GetTodosService;
