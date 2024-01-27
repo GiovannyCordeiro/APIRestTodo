@@ -30,7 +30,11 @@ public class TodosController {
   private final UpdateTodoService updateTodo;
   private final DeleteTodoService deleteTodo;
 
-  public TodosController(GetTodosService getTodoService, CreateTodoService createTodo, UpdateTodoService updateTodo, DeleteTodoService deleteTodo){
+  public TodosController(
+      GetTodosService getTodoService,
+      CreateTodoService createTodo,
+      UpdateTodoService updateTodo,
+      DeleteTodoService deleteTodo) {
     this.getTodoService = getTodoService;
     this.createTodo = createTodo;
     this.updateTodo = updateTodo;
@@ -43,17 +47,17 @@ public class TodosController {
   }
 
   @PostMapping
-  public ResponseEntity<Todos> createTodo(@RequestBody @Validated RequestCreateTodoDTO data){
+  public ResponseEntity<Todos> createTodo(@RequestBody @Validated RequestCreateTodoDTO data) {
     return createTodo.createTodo(data);
   }
 
   @PutMapping
-  public ResponseEntity<Todos> updateTodo(@Validated @RequestBody RequestUpdateDTO data){
+  public ResponseEntity<Todos> updateTodo(@Validated @RequestBody RequestUpdateDTO data) {
     return updateTodo.requestAttTodo(data);
   }
-  
+
   @DeleteMapping
-  public ResponseEntity deleteTodo(@Validated @RequestBody RequestDeleteDTO data){
+  public ResponseEntity deleteTodo(@Validated @RequestBody RequestDeleteDTO data) {
     return deleteTodo.requestDeleteTodo(data);
   }
 }

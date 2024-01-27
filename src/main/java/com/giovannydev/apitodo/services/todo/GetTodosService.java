@@ -21,7 +21,7 @@ public class GetTodosService {
 
   private ResponseEntity<List<Todos>> ruleResponseUser() {
     List<Todos> allTodos = this.getAllTodos();
-    if(allTodos.size() == 0) {
+    if (allTodos.size() == 0) {
       return ResponseEntity.notFound().build();
     }
     return ResponseEntity.ok(allTodos);

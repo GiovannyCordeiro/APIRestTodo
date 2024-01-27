@@ -13,9 +13,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name="todos")
-@Entity(name="todos")
-@EqualsAndHashCode(of="id")
+@Table(name = "todos")
+@Entity(name = "todos")
+@EqualsAndHashCode(of = "id")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -34,7 +34,7 @@ public class Todos {
 
   private Boolean status;
 
-  public Todos(RequestCreateTodoDTO requestTodo){
+  public Todos(RequestCreateTodoDTO requestTodo) {
     this.name = requestTodo.name();
     this.description = requestTodo.description();
     this.category = requestTodo.category();

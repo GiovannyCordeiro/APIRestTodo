@@ -17,20 +17,20 @@ public class DeleteTodoService {
   @Autowired
   private TodosRepository repository;
 
-  public ResponseEntity<Todos> requestDeleteTodo(RequestDeleteDTO data){
+  public ResponseEntity<Todos> requestDeleteTodo(RequestDeleteDTO data) {
     return ruleDeleteTodo(data.id());
   }
 
-  private ResponseEntity<Todos> ruleDeleteTodo(Integer idTodo){
+  private ResponseEntity<Todos> ruleDeleteTodo(Integer idTodo) {
     Optional<Todos> searchTodo = repository.findById(idTodo);
-    if(searchTodo.isPresent()){
+    if (searchTodo.isPresent()) {
       return deleteTodo(idTodo);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
 
-  private ResponseEntity<Todos> deleteTodo(Integer idTodo){
+  private ResponseEntity<Todos> deleteTodo(Integer idTodo) {
     repository.deleteById(idTodo);
     return ResponseEntity.noContent().build();
   }

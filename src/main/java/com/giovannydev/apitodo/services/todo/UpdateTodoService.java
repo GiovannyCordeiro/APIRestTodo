@@ -28,7 +28,7 @@ public class UpdateTodoService {
   }
 
   private ResponseEntity<Todos> verifyIsPresentDB(Optional<Todos> searchedTodo) {
-    if(searchedTodo.isPresent()){
+    if (searchedTodo.isPresent()) {
       Todos actualTodos = searchedTodo.get();
       return attTodoInDB(actualTodos);
     } else {
@@ -37,10 +37,10 @@ public class UpdateTodoService {
   }
 
   private ResponseEntity<Todos> attTodoInDB(Todos actualTodo) {
-      actualTodo.setName(bodyRequest.name());
-      actualTodo.setDescription(bodyRequest.description());
-      actualTodo.setCategory(bodyRequest.category());
-      actualTodo.setStatus(bodyRequest.status());
-      return ResponseEntity.ok().build();
+    actualTodo.setName(bodyRequest.name());
+    actualTodo.setDescription(bodyRequest.description());
+    actualTodo.setCategory(bodyRequest.category());
+    actualTodo.setStatus(bodyRequest.status());
+    return ResponseEntity.ok().build();
   }
 }
