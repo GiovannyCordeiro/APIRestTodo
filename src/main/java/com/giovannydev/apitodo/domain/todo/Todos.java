@@ -1,5 +1,7 @@
 package com.giovannydev.apitodo.domain.todo;
 
+import java.sql.Timestamp;
+
 import com.giovannydev.apitodo.domain.todo.DTOs.RequestCreateTodoDTO;
 
 import jakarta.persistence.Entity;
@@ -34,10 +36,13 @@ public class Todos {
 
   private Boolean status;
 
+  private Timestamp data;
+
   public Todos(RequestCreateTodoDTO requestTodo) {
     this.name = requestTodo.name();
     this.description = requestTodo.description();
     this.category = requestTodo.category();
     this.status = requestTodo.status();
+    this.data = new Timestamp(System.currentTimeMillis());
   }
 }
